@@ -5,8 +5,9 @@ using System.Threading.Tasks;
 using Luizalabs.Challenge.Contracts.v1.Requests;
 using Luizalabs.Challenge.Core;
 using Luizalabs.Challenge.Core.Interfaces;
+using Luizalabs.Challenge.Services.Products;
 
-namespace Luizalabs.Challenge.Services.Products.Impl
+namespace Luizalabs.Challenge.Services.Impl
 {
     public class ProductReviewService : IProductReviewService
     {

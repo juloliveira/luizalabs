@@ -20,7 +20,7 @@ namespace Luizalabs.Challenge.Tests.Core
         [Test]
         public void On_Create()
         {
-            Assert.AreEqual(0, _customer.FavoriteProducts.Count());
+            Assert.AreEqual(0, _customer.FavoritiesProducts.Count());
         }
 
         [Test]
@@ -30,7 +30,7 @@ namespace Luizalabs.Challenge.Tests.Core
 
             _customer.AddProductFavorite(product);
 
-            Assert.AreEqual(1, _customer.FavoriteProducts.Count());
+            Assert.AreEqual(1, _customer.FavoritiesProducts.Count());
         }
     }
 }

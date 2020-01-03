@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.29509.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Luizalabs.Challenge.Core", "Luizalabs.Challenge.Core\Luizalabs.Challenge.Core.csproj", "{5735D2E6-EA31-40A0-92DB-8E20BBC7812D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Luizalabs.Challenge.Tests", "Luizalabs.Challenge.Tests\Luizalabs.Challenge.Tests.csproj", "{68412FCE-A7CD-4F26-9CC2-BE54B3E91FD8}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Luizalabs.Challenge.Api", "Luizalabs.Challenge.Api\Luizalabs.Challenge.Api.csproj", "{72C69491-74A9-4AC7-9B79-BFA58D5E1882}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Luizalabs.Challenge.Data", "Luizalabs.Challenge.Data\Luizalabs.Challenge.Data.csproj", "{8EFB7376-CA17-4319-AFBA-D8E40CCCD5C3}"
@@ -25,10 +23,6 @@ Global
 		{5735D2E6-EA31-40A0-92DB-8E20BBC7812D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5735D2E6-EA31-40A0-92DB-8E20BBC7812D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5735D2E6-EA31-40A0-92DB-8E20BBC7812D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{68412FCE-A7CD-4F26-9CC2-BE54B3E91FD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{68412FCE-A7CD-4F26-9CC2-BE54B3E91FD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{68412FCE-A7CD-4F26-9CC2-BE54B3E91FD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{68412FCE-A7CD-4F26-9CC2-BE54B3E91FD8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{72C69491-74A9-4AC7-9B79-BFA58D5E1882}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{72C69491-74A9-4AC7-9B79-BFA58D5E1882}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72C69491-74A9-4AC7-9B79-BFA58D5E1882}.Release|Any CPU.ActiveCfg = Release|Any CPU

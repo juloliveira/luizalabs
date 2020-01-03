@@ -14,5 +14,6 @@ namespace Luizalabs.Challenge.Core.Interfaces
         Task RemoveById(long id);
 
         Task<bool> ExistsEmail(string email);
+        Task IncludeFavorite(Customer customer, Product product);
     }
 }

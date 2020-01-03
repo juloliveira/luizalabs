@@ -41,9 +41,18 @@ namespace Luizalabs.Challenge.Data
         {
             using (var conn = new MySqlConnection(_connectionString))
             {
-                return await conn.QuerySingleOrDefaultAsync<Customer>(
+                var customer = await conn.QuerySingleOrDefaultAsync<Customer>(
                     "SELECT id, name, email, address, createdAt, updatedAt FROM Customers WHERE id = @id", 
                     new { id });
+
+                var favorities = await conn.QueryAsync<Product>(
+                    "SELECT id, title FROM Products " +
+                    "INNER JOIN Customers_FavoritiesProducts ON Products.id = Customers_FavoritiesProducts.product_id " +
+                    "WHERE customer_id = @id", new { id });
+
+                customer.SetFavoritiesProducts(favorities);
+
+                return customer;
             }
         }
 
@@ -77,6 +86,22 @@ namespace Luizalabs.Challenge.Data
             }
         }
 
-        
+        public async Task IncludeFavorite(Customer customer, Product product)
+        {
+            using (var conn = new MySqlConnection(_connectionString))
+            {
+                var queryInsert = 
+                    "INSERT INTO Customers_FavoritiesProducts (customer_id, product_id) " +
+                    "VALUES (@CustomerId, @ProductId);";
+
+                var model = new
+                {
+                    CustomerId = customer.Id,
+                    ProductId = product.Id
+                };
+
+                await conn.ExecuteScalarAsync<long>(queryInsert, model);
+            }
+        }
     }
 }
