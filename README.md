@@ -21,6 +21,7 @@ Algumas considerações que acredito serem importantes de serem mencionadas come
 - Eu iniciei o projeto pensando em DDD, centralizando no meu domínio as regras de negócio (ao incluir um produto favorito, por exemplo). Porém, durante o processo eu resolvi usar micro-ORM Dapper e como ele não possui um "cascade" para salvar minhas entidades e seus filhos e eu não implementei um Data Tacker o domínio ficou sem regras de negócio ao incluir um produto favorito. Esse processo de incluir um favorito e validações, por exemplo, ficou direto no serviço IFavoriteService e não na classe de domínio Customer em um método AddFavorite(Product product) que é a forma como costumo trabalhar em meus projetos.
 - Esse projeto tem diversas débitos técnicos como por exemplo, não implementei uma convensão para respostas de erro.
 - Esse projeto foi escrito em dois dias.
+- Por favor, eu fiz esse projeto correndo pois estou essa semana do ano novo com minha filha em casa e moro sozinho. Peço a compreenção de quem revisar o código. 
 
 
 Seria legal se após testarem o projeto vocês fizessem um PR neste arquito README, assim eu tenho um feedback de vocês.
