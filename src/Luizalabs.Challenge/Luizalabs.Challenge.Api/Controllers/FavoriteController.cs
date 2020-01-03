@@ -4,13 +4,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using Luizalabs.Challenge.Contracts.v1.Requests;
 using Luizalabs.Challenge.Services.Favorities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Luizalabs.Challenge.Api.Controllers
 {
     [Route("api/customer/{customerId}/[controller]")]
-    [ApiController]
+    [ApiController, Authorize]
     public class FavoriteController : ControllerBase
     {
         private IFavoriteService _favoriteService;

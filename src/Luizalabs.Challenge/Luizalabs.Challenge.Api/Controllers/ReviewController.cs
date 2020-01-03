@@ -6,13 +6,14 @@ using Luizalabs.Challenge.Contracts.v1.Requests;
 using Luizalabs.Challenge.Contracts.v1.Responses;
 using Luizalabs.Challenge.Core;
 using Luizalabs.Challenge.Services.Products;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Luizalabs.Challenge.Api.Controllers
 {
     [Route("api/product/{id}/[controller]")]
-    [ApiController]
+    [ApiController, Authorize]
     public class ReviewController : ControllerBase
     {
         private IProductReviewService _productReviewService;

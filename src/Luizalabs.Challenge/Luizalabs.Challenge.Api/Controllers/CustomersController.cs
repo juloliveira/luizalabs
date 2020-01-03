@@ -5,12 +5,13 @@ using AutoMapper;
 using Luizalabs.Challenge.Contracts.v1.Requests;
 using Luizalabs.Challenge.Contracts.v1.Responses;
 using Luizalabs.Challenge.Core.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Luizalabs.Challenge.Api.Controllers
 {
     [Route("api/[controller]")]
-    [ApiController]
+    [ApiController, Authorize]
     public class CustomersController : ControllerBase
     {
         private ICustomers _customers;

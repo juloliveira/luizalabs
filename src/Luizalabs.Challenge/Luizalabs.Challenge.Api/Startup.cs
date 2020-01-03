@@ -6,13 +6,17 @@ using Luizalabs.Challenge.Services.Favorities;
 using Luizalabs.Challenge.Services.Favorities.Impl;
 using Luizalabs.Challenge.Services.Products;
 using Luizalabs.Challenge.Services.Products.Impl;
+using Luizalabs.Challenge.Services.Security;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json.Serialization;
 using System.Reflection;
+using System.Text;
 
 namespace Luizalabs.Challenge.Api
 {
@@ -27,6 +31,26 @@ namespace Luizalabs.Challenge.Api
 
         public void ConfigureServices(IServiceCollection services)
         {
+            var key = Encoding.ASCII.GetBytes(Configuration.GetSection("Secret").Value);
+
+            services.AddAuthentication(x =>
+            {
+                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+            .AddJwtBearer(x =>
+            {
+                x.RequireHttpsMetadata = false;
+                x.SaveToken = true;
+                x.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(key),
+                    ValidateIssuer = false,
+                    ValidateAudience = false
+                };
+            });
+
             services.AddControllers()
                 .AddNewtonsoftJson(options =>
                 {
@@ -41,6 +65,8 @@ namespace Luizalabs.Challenge.Api
                 });
 
             services.AddAutoMapper(typeof(Startup));
+
+            services.AddSingleton<UserService>();
 
             services.AddScoped<ICustomers, Customers>();
             services.AddScoped<IBrands, Brands>();
@@ -59,6 +85,13 @@ namespace Luizalabs.Challenge.Api
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseCors(x => x
+                .AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader());
+
+            app.UseAuthentication();
 
             app.UseHttpsRedirection();
 

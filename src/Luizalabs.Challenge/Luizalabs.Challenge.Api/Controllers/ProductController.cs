@@ -8,13 +8,14 @@ using Luizalabs.Challenge.Contracts.v1.Responses;
 using Luizalabs.Challenge.Core;
 using Luizalabs.Challenge.Core.Interfaces;
 using Luizalabs.Challenge.Services.Products;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Luizalabs.Challenge.Api.Controllers
 {
     [Route("api/[controller]")]
-    [ApiController]
+    [ApiController, Authorize]
     public class ProductController : ControllerBase
     {
         private IMapper _mapper;

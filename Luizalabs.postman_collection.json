@@ -1,0 +1,497 @@
+{
+	"info": {
+		"_postman_id": "527c8e82-95c9-4d94-8048-355e8118393c",
+		"name": "Luizalabs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Customers",
+			"item": [
+				{
+					"name": "Customers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6Imx1aXphbGFicyIsIm5iZiI6MTU3ODA5MjAyNSwiZXhwIjoxNTc4Njk2ODI1LCJpYXQiOjE1NzgwOTIwMjV9.hXPwlhn-OZMtE1rDVqHlQg4jpbrvuifIcGp1TZ8iZZ0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:54056/api/customers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "54056",
+							"path": [
+								"api",
+								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Customer",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6Imx1aXphbGFicyIsIm5iZiI6MTU3ODA5MjAyNSwiZXhwIjoxNTc4Njk2ODI1LCJpYXQiOjE1NzgwOTIwMjV9.hXPwlhn-OZMtE1rDVqHlQg4jpbrvuifIcGp1TZ8iZZ0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Nome do Cliente\",\n\t\"email\": \"esmaail@email.com\",\n\t\"address\": \"Meu endereço\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:54056/api/customers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "54056",
+							"path": [
+								"api",
+								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Customer",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6Imx1aXphbGFicyIsIm5iZiI6MTU3ODA5MjAyNSwiZXhwIjoxNTc4Njk2ODI1LCJpYXQiOjE1NzgwOTIwMjV9.hXPwlhn-OZMtE1rDVqHlQg4jpbrvuifIcGp1TZ8iZZ0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Carol Ferlin\",\n\t\"address\": \"Vila Andrade\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:54056/api/customers/9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "54056",
+							"path": [
+								"api",
+								"customers",
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Customer",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6Imx1aXphbGFicyIsIm5iZiI6MTU3ODA5MjAyNSwiZXhwIjoxNTc4Njk2ODI1LCJpYXQiOjE1NzgwOTIwMjV9.hXPwlhn-OZMtE1rDVqHlQg4jpbrvuifIcGp1TZ8iZZ0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:54056/api/customers/8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "54056",
+							"path": [
+								"api",
+								"customers",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put Favorite Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6Imx1aXphbGFicyIsIm5iZiI6MTU3ODA5MjAyNSwiZXhwIjoxNTc4Njk2ODI1LCJpYXQiOjE1NzgwOTIwMjV9.hXPwlhn-OZMtE1rDVqHlQg4jpbrvuifIcGp1TZ8iZZ0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"product_id\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:54056/api/customer/1/favorite",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "54056",
+							"path": [
+								"api",
+								"customer",
+								"1",
+								"favorite"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "8c5fa822-c72a-47a0-8aef-6ff22bf67566",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "8204314e-2416-4ce3-901a-6187946a7531",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Post Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6Imx1aXphbGFicyIsIm5iZiI6MTU3ODA5MjAyNSwiZXhwIjoxNTc4Njk2ODI1LCJpYXQiOjE1NzgwOTIwMjV9.hXPwlhn-OZMtE1rDVqHlQg4jpbrvuifIcGp1TZ8iZZ0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\": \"Galaxy XC\",\n\t\"price\": 2323.12,\n\t\"image\": \"http://\",\n\t\"brand_id\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:54056/api/product",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "54056",
+							"path": [
+								"api",
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put Review",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6Imx1aXphbGFicyIsIm5iZiI6MTU3ODA5MjAyNSwiZXhwIjoxNTc4Njk2ODI1LCJpYXQiOjE1NzgwOTIwMjV9.hXPwlhn-OZMtE1rDVqHlQg4jpbrvuifIcGp1TZ8iZZ0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"customer_id\": 1,\n\t\"score\": 5,\n\t\"comment\": \"Um comentário\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:54056/api/product/1/review",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "54056",
+							"path": [
+								"api",
+								"product",
+								"1",
+								"review"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Products Page",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6Imx1aXphbGFicyIsIm5iZiI6MTU3ODA5MjAyNSwiZXhwIjoxNTc4Njk2ODI1LCJpYXQiOjE1NzgwOTIwMjV9.hXPwlhn-OZMtE1rDVqHlQg4jpbrvuifIcGp1TZ8iZZ0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:54056/api/product/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "54056",
+							"path": [
+								"api",
+								"product",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Product Detail",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6Imx1aXphbGFicyIsIm5iZiI6MTU3ODA5MjAyNSwiZXhwIjoxNTc4Njk2ODI1LCJpYXQiOjE1NzgwOTIwMjV9.hXPwlhn-OZMtE1rDVqHlQg4jpbrvuifIcGp1TZ8iZZ0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:54056/api/product/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "54056",
+							"path": [
+								"api",
+								"product",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Brands",
+			"item": [
+				{
+					"name": "Post Brands",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6Imx1aXphbGFicyIsIm5iZiI6MTU3ODA5MjAyNSwiZXhwIjoxNTc4Njk2ODI1LCJpYXQiOjE1NzgwOTIwMjV9.hXPwlhn-OZMtE1rDVqHlQg4jpbrvuifIcGp1TZ8iZZ0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"LG Eletronics\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:54056/api/brands",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "54056",
+							"path": [
+								"api",
+								"brands"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Security",
+			"item": [
+				{
+					"name": "Authentication",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"luizalabs\",\n\t\"password\": \"luizalabs@1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:54056/api/security/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "54056",
+							"path": [
+								"api",
+								"security",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
