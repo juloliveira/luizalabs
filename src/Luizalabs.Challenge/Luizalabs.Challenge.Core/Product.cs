@@ -20,13 +20,5 @@ namespace Luizalabs.Challenge.Core
 
         public IEnumerable<Review> Reviews => _reviews;
         public double ReviewScore { get; protected set; }
-
-        public void AddReview(Review review)
-        {
-            if (review == null) throw new ArgumentException();
-            
-            _reviews.Add(review);
-            ReviewScore = _reviews.Average(x => x.Score);
-        }
     }
 }
