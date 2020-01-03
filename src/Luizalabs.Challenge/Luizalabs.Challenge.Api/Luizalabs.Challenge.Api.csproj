@@ -23,6 +23,7 @@
     <ProjectReference Include="..\Luizalabs.Challenge.Contracts\Luizalabs.Challenge.Contracts.csproj" />
     <ProjectReference Include="..\Luizalabs.Challenge.Core\Luizalabs.Challenge.Core.csproj" />
     <ProjectReference Include="..\Luizalabs.Challenge.Data\Luizalabs.Challenge.Data.csproj" />
+    <ProjectReference Include="..\Luizalabs.Challenge.Services\Luizalabs.Challenge.Services.csproj" />
   </ItemGroup>
 
 

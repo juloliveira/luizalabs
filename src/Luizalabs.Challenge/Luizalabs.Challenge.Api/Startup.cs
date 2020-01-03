@@ -2,6 +2,8 @@ using AutoMapper;
 using FluentValidation.AspNetCore;
 using Luizalabs.Challenge.Core.Interfaces;
 using Luizalabs.Challenge.Data;
+using Luizalabs.Challenge.Services.Products;
+using Luizalabs.Challenge.Services.Products.Impl;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -39,8 +41,10 @@ namespace Luizalabs.Challenge.Api
             services.AddAutoMapper(typeof(Startup));
 
             services.AddScoped<ICustomers, Customers>();
+            services.AddScoped<IBrands, Brands>();
+            services.AddScoped<IProducts, Products>();
 
-
+            services.AddScoped<IProductInsertService, ProductInsertService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

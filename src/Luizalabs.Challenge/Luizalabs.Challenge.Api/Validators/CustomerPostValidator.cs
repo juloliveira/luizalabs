@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 
 namespace Luizalabs.Challenge.Api.Validators
 {
-
     public class CustomerPostValidator : AbstractValidator<CustomerPost>
     {
         public CustomerPostValidator()

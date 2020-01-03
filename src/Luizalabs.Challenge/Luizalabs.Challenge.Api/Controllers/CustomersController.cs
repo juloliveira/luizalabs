@@ -1,13 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using Luizalabs.Challenge.Contracts.v1.Requests;
 using Luizalabs.Challenge.Contracts.v1.Responses;
-using Luizalabs.Challenge.Core;
 using Luizalabs.Challenge.Core.Interfaces;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Luizalabs.Challenge.Api.Controllers
@@ -37,28 +34,38 @@ namespace Luizalabs.Challenge.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post(CustomerPost post)
+        public async Task<IActionResult> Post(CustomerPost customerPost)
         {
-            if (await _customers.ExistsEmail(post.Email)) throw new Exception("E-mail ja cadastrado");
+            if (await _customers.ExistsEmail(customerPost.Email)) throw new Exception("E-mail ja cadastrado");
 
-            var customer = post.CreateDomain();
+            var customer = customerPost.CreateDomain();
             await _customers.Insert(customer);
 
             return Ok(new Response<long>(customer.Id));
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Put([FromRoute]long id, CustomerPut put)
+        public async Task<IActionResult> Put([FromRoute]long id, CustomerPut customerPut)
         {
             var customer = await _customers.GetById(id);
 
             if (customer == null) throw new Exception("Cliente não encontrado");
 
-            put.UpdateDomain(customer);
+            customerPut.UpdateDomain(customer);
 
             await _customers.Update(customer);
 
             return Ok(new Response<long>(customer.Id));
         }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete([FromRoute]long id)
+        {
+            await _customers.RemoveById(id);
+
+            return Ok(new Response<long>(id));
+        }
+
+
     }
 }

@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Luizalabs.Challenge.Contracts\Luizalabs.Challenge.Contracts.csproj" />
+    <ProjectReference Include="..\Luizalabs.Challenge.Core\Luizalabs.Challenge.Core.csproj" />
+  </ItemGroup>
+
+</Project>

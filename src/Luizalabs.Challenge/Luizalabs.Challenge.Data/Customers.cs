@@ -47,7 +47,7 @@ namespace Luizalabs.Challenge.Data
             }
         }
 
-        public async Task<bool> Insert(Customer customer)
+        public async Task Insert(Customer customer)
         {
             using (var conn = new MySqlConnection(_connectionString))
             {
@@ -57,18 +57,26 @@ namespace Luizalabs.Challenge.Data
                 var id = await conn.ExecuteScalarAsync<long>(queryInsert, customer);
                 customer.Id = id;
             }
-
-            return true;
         }
-
         public async Task Update(Customer customer)
         {
             using (var conn = new MySqlConnection(_connectionString))
             {
-                var queryUpdate = "UPDATE Customers SET name = @Name, address = @Address WHERE id = @Id";
+                customer.Update();
+                var queryUpdate = "UPDATE Customers SET name = @Name, address = @Address, updatedAt = @UpdatedAt WHERE id = @Id";
 
                 await conn.ExecuteAsync(queryUpdate, customer);
             }
         }
+
+        public async Task RemoveById(long id)
+        {
+            using (var conn = new MySqlConnection(_connectionString))
+            {
+                await conn.ExecuteAsync("DELETE FROM Customers WHERE id = @id", new { id });
+            }
+        }
+
+        
     }
 }
