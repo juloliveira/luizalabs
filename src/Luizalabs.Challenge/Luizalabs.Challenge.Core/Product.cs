@@ -21,8 +21,9 @@ namespace Luizalabs.Challenge.Core
         public IEnumerable<Review> Reviews => _reviews;
         public double ReviewScore { get; protected set; }
 
-        public void AddReview(Review review)
+        public void AddReview(Review review, Customer customer)
         {
+            review.Customer = customer;
             _reviews.Add(review);
         }
     }

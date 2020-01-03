@@ -15,7 +15,7 @@ namespace Luizalabs.Challenge.Core
             Comment = comment;
         }
 
-        public Customer Customer { get; protected set; }
+        public Customer Customer { get; set; }
         public double Score { get; protected set; }
         public string Comment { get; protected set; }
     }

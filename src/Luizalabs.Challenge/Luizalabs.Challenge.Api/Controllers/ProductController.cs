@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Luizalabs.Challenge.Contracts.v1.Requests;
 using Luizalabs.Challenge.Contracts.v1.Responses;
 using Luizalabs.Challenge.Core;
+using Luizalabs.Challenge.Core.Interfaces;
 using Luizalabs.Challenge.Services.Products;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -15,11 +17,19 @@ namespace Luizalabs.Challenge.Api.Controllers
     [ApiController]
     public class ProductController : ControllerBase
     {
+        private IMapper _mapper;
+        private IProducts _products;
         private IProductInsertService _productService;
         private IProductPagination _productPagination;
 
-        public ProductController(IProductInsertService productService, IProductPagination productPagination)
+        public ProductController(
+            IMapper mapper,
+            IProducts products, 
+            IProductInsertService productService, 
+            IProductPagination productPagination)
         {
+            _mapper = mapper;
+            _products = products;
             _productService = productService;
             _productPagination = productPagination;
         }
@@ -43,7 +53,10 @@ namespace Luizalabs.Challenge.Api.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> Get([FromRoute]long id)
         {
-            return Ok(new { A = 1 });
+            var product = await _products.GetById(id);
+            var response = _mapper.Map<ProductDetail>(product);
+
+            return Ok(new Response<ProductDetail>(response));
         }
     }
 }
