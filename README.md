@@ -8,7 +8,8 @@ Este projeto foi desenvolvido através do Microsoft **Visual Studio Community 20
 Algumas considerações que acredito serem importantes de serem mencionadas comentar sobre meu projeto:
 - Projeto Luizalabs.Challenge foi escrito utilizando a arquitetura Domain-Driven Design do Eric Evans
 - Para autenticação eu utilizei JWT mas não fiz um cadastro de usuários. O usuário está hardcoded (user: luizalabs, password: luizalabs@1234)
-- Inclui no projeto um arquivo do Postman. A ideia é que vocês importem no Postman e já consigam imediatamente testar.
+- Adicionei no projeto um arquivo do Postman. A ideia é que vocês importem no Postman e já consigam imediatamente testar.
+- Adicionei também um dump do banco de dados gerado pelo phpMyAdmin.
 - O projeto é clonar o repositório, abrir no Visual Studio e rodar.
 - Para acesso aos dados utilizei o micro-ORM Dapper. Ele é rápido e vai agilizar o meu trabalho.
 - Estou utilizando o FluentValidator para as validações. As validações são feitas em tempo de requisição, ou seja, se o modelo não for válido a Action requisitada não será executada fazendo uma validação prévia dos dados enviados para o serviço.
