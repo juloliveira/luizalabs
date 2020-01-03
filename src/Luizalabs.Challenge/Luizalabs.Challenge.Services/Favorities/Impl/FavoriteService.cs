@@ -5,7 +5,7 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Luizalabs.Challenge.Services.Impl
+namespace Luizalabs.Challenge.Services.Favorities.Impl
 {
     public class FavoriteService : IFavoriteService
     {

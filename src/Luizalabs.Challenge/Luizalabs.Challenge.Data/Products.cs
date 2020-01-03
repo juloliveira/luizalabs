@@ -32,14 +32,15 @@ namespace Luizalabs.Challenge.Data
         {
             using (var conn = new MySqlConnection(_connectionString))
             {
-                var queryInsert = "INSERT INTO Products(title, price, image, brand_id, createdAt, updatedAt)" +
-                    "VALUES (@Title, @Price, @Image, @BrandId, @CreatedAt, @UpdatedAt);SELECT LAST_INSERT_ID();";
+                var queryInsert = "INSERT INTO Products(title, price, image, reviewScore, brand_id, createdAt, updatedAt)" +
+                    "VALUES (@Title, @Price, @Image, @ReviewScore, @BrandId, @CreatedAt, @UpdatedAt);SELECT LAST_INSERT_ID();";
 
                 var model = new
                 {
                     product.Title,
                     product.Price,
                     product.Image,
+                    product.ReviewScore,
                     BrandId = product.Brand.Id,
                     product.CreatedAt,
                     product.UpdatedAt

@@ -7,7 +7,7 @@ using Luizalabs.Challenge.Core;
 using Luizalabs.Challenge.Core.Interfaces;
 using Luizalabs.Challenge.Services.Products;
 
-namespace Luizalabs.Challenge.Services.Impl
+namespace Luizalabs.Challenge.Services.Products.Impl
 {
     public class ProductInsertService : IProductInsertService
     {

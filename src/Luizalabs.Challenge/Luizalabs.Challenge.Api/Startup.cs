@@ -3,8 +3,9 @@ using FluentValidation.AspNetCore;
 using Luizalabs.Challenge.Core.Interfaces;
 using Luizalabs.Challenge.Data;
 using Luizalabs.Challenge.Services.Favorities;
-using Luizalabs.Challenge.Services.Impl;
+using Luizalabs.Challenge.Services.Favorities.Impl;
 using Luizalabs.Challenge.Services.Products;
+using Luizalabs.Challenge.Services.Products.Impl;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -48,6 +49,7 @@ namespace Luizalabs.Challenge.Api
             services.AddScoped<IProductInsertService, ProductInsertService>();
             services.AddScoped<IProductReviewService, ProductReviewService>();
             services.AddScoped<IFavoriteService, FavoriteService>();
+            services.AddScoped<IProductPagination, ProductPagination>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
